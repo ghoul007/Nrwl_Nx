@@ -1,22 +1,23 @@
 import { Action } from '@ngrx/store';
 
 export enum AuthActionTypes {
-  AuthAction = '[Auth] Action',
-  LoadAuth = '[Auth] Load Data',
-  AuthLoaded = '[Auth] Data Loaded'
+  Login = '[Auth] Login',
+  LoginSuccess = '[Auth] LoginSuccess',
+  LoginFail = '[Auth] LoginFail'
+}
+ 
+export class LoginAction implements Action {
+  readonly type = AuthActionTypes.Login;
 }
 
-export class Auth implements Action {
-  readonly type = AuthActionTypes.AuthAction;
-}
-export class LoadAuth implements Action {
-  readonly type = AuthActionTypes.LoadAuth;
+export class LoginSuccessAction implements Action {
+  readonly type = AuthActionTypes.LoginSuccess;
   constructor(public payload: any) {}
 }
 
-export class AuthLoaded implements Action {
-  readonly type = AuthActionTypes.AuthLoaded;
+export class LoginFailAction implements Action {
+  readonly type = AuthActionTypes.LoginFail;
   constructor(public payload: any) {}
 }
 
-export type AuthActions = Auth | LoadAuth | AuthLoaded;
+export type AuthActions = LoginAction | LoginSuccessAction | LoginFailAction;

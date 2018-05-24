@@ -6,7 +6,8 @@ import { EffectsModule } from '@ngrx/effects';
 import { authReducer, initialState as authInitialState } from './+state/auth.reducer';
 import { AuthEffects } from './+state/auth.effects';
 import { LoginComponent } from './containers/login/login.component';
-import { AuthService} from '@demo-workspace/auth/src/lib/services//auth.service'
+import { AuthService} from './services/auth.service';
+import { LoginFormComponent } from './containers/login-form/login-form.component'
 @NgModule({
   imports: [
     CommonModule,
@@ -20,6 +21,6 @@ import { AuthService} from '@demo-workspace/auth/src/lib/services//auth.service'
     EffectsModule.forFeature([AuthEffects])
   ],
   providers: [AuthEffects, AuthService],
-  declarations: [ LoginComponent]
+  declarations: [ LoginComponent, LoginFormComponent]
 })
 export class AuthModule {}

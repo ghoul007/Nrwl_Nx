@@ -6,7 +6,10 @@ import { AuthActions, AuthActionTypes } from './auth.actions';
  *  - AuthState, and
  *  - authReducer
  */
-export interface AuthData {}
+export interface AuthData {
+  auth: any,
+  loadin: boolean
+}
 
 /**
  * Interface to the part of the Store containing AuthState
@@ -16,18 +19,18 @@ export interface AuthState {
   readonly auth: AuthData;
 }
 
-export const initialState: AuthData = {};
+export const initialState: AuthData = {
+  auth: null,
+  loadin: false
+};
 
 export function authReducer(
   state = initialState,
   action: AuthActions
 ): AuthData {
   switch (action.type) {
-    case AuthActionTypes.AuthAction:
-      return state;
-
-    case AuthActionTypes.AuthLoaded: {
-      return { ...state, ...action.payload };
+    case AuthActionTypes.LoginSuccess: {
+      return { ...state, auth: action.payload };
     }
 
     default:
