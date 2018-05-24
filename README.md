@@ -45,3 +45,5 @@ ng g app customer-portal --style scss --routing
 ng g ngrx app --module=apps/customer-portal/src/app/app.module.ts --onlyEmptyRoot
 
 ng s -a=customer-portal -p 4201
+
+ng g lib auth  --routing --lazy --parent-module=apps/customer-portal/src/app/app.module.ts

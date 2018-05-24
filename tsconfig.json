@@ -18,6 +18,9 @@
     "paths": {
       "@demo-workspace/*": [
         "libs/*"
+      ],
+      "@demo-workspace/auth": [
+        "libs/auth/src/index.ts"
       ]
     }
   },
