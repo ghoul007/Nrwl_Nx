@@ -47,3 +47,4 @@ ng g ngrx app --module=apps/customer-portal/src/app/app.module.ts --onlyEmptyRoo
 ng s -a=customer-portal -p 4201
 
 ng g lib auth  --routing --lazy --parent-module=apps/customer-portal/src/app/app.module.ts
+ng g ngrx auth --module=lib/auth/src/auth.module.ts
