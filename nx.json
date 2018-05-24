@@ -6,6 +6,12 @@
     },
     "customer-portal-e2e": {
       "tags": []
+    },
+    "admin-portal": {
+      "tags": []
+    },
+    "admin-portal-e2e": {
+      "tags": []
     }
   }
 }
